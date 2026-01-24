@@ -13,6 +13,8 @@ const envSchema = z.object({
   TWILIO_FROM: z.string().nonempty('TWILIO_FROM is required'),
   */
   DEFAULT_CITY: z.string().default('Madison'),
+  FRONTEND_ORIGIN: z.string().optional(),
+  DEV_KEY: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
